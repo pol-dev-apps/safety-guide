@@ -5,8 +5,8 @@
 -keepclassmembers class dev.pol.safetyguide.data.model.** { *; }
 
 # Keep BackupData for Gson serialization
--keep class dev.pol.safetyguide.viewmodel.BackupData { *; }
--keepclassmembers class dev.pol.safetyguide.viewmodel.BackupData { *; }
+-keep class dev.pol.safetyguide.data.repository.BackupData { *; }
+-keepclassmembers class dev.pol.safetyguide.data.repository.BackupData { *; }
 
 # Gson TypeToken
 -keep class com.google.gson.reflect.TypeToken { *; }

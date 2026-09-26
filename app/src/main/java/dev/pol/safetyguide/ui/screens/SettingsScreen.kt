@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -23,8 +24,10 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import dev.pol.safetyguide.R
 import dev.pol.safetyguide.data.util.SupplyCalculator
-import dev.pol.safetyguide.ui.theme.EvacuationCardBackground
-import dev.pol.safetyguide.ui.theme.EvacuationCardContent
+import dev.pol.safetyguide.ui.theme.EvacuationCardBackgroundDark
+import dev.pol.safetyguide.ui.theme.EvacuationCardBackgroundLight
+import dev.pol.safetyguide.ui.theme.EvacuationCardContentDark
+import dev.pol.safetyguide.ui.theme.EvacuationCardContentLight
 import dev.pol.safetyguide.viewmodel.OperationResult
 import dev.pol.safetyguide.viewmodel.SettingsViewModel
 import kotlinx.coroutines.launch
@@ -39,6 +42,9 @@ fun SettingsScreen(
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
+    val isDarkTheme = isSystemInDarkTheme()
+    val evacuationCardBackground = if (isDarkTheme) EvacuationCardBackgroundDark else EvacuationCardBackgroundLight
+    val evacuationCardContent = if (isDarkTheme) EvacuationCardContentDark else EvacuationCardContentLight
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
     var showResetDialog by remember { mutableStateOf(false) }
@@ -310,7 +316,7 @@ fun SettingsScreen(
                     .fillMaxWidth()
                     .padding(16.dp),
                 colors = CardDefaults.cardColors(
-                    containerColor = EvacuationCardBackground
+                    containerColor = evacuationCardBackground
                 )
             ) {
                 Column(
@@ -319,7 +325,7 @@ fun SettingsScreen(
                     Text(
                         text = stringResource(R.string.settings_evac_days),
                         style = MaterialTheme.typography.titleMedium,
-                        color = EvacuationCardContent
+                        color = evacuationCardContent
                     )
                     Spacer(modifier = Modifier.height(8.dp))
                     Row(
@@ -339,9 +345,9 @@ fun SettingsScreen(
                                 imageVector = Icons.Default.Remove,
                                 contentDescription = stringResource(R.string.accessibility_decrease),
                                 tint = if (evacDays > 1) {
-                                    EvacuationCardContent
+                                    evacuationCardContent
                                 } else {
-                                    EvacuationCardContent.copy(alpha = 0.3f)
+                                    evacuationCardContent.copy(alpha = 0.3f)
                                 }
                             )
                         }
@@ -350,7 +356,7 @@ fun SettingsScreen(
                             text = "$evacDays",
                             style = MaterialTheme.typography.headlineLarge,
                             modifier = Modifier.padding(horizontal = 16.dp),
-                            color = EvacuationCardContent
+                            color = evacuationCardContent
                         )
 
                         Spacer(modifier = Modifier.width(8.dp))
@@ -367,9 +373,9 @@ fun SettingsScreen(
                                 imageVector = Icons.Default.Add,
                                 contentDescription = stringResource(R.string.accessibility_increase),
                                 tint = if (evacDays < MAX_EVAC_DAYS) {
-                                    EvacuationCardContent
+                                    evacuationCardContent
                                 } else {
-                                    EvacuationCardContent.copy(alpha = 0.3f)
+                                    evacuationCardContent.copy(alpha = 0.3f)
                                 }
                             )
                         }
@@ -378,7 +384,7 @@ fun SettingsScreen(
                     Text(
                         text = stringResource(R.string.settings_min_evac_days, evacDays, pluralStringResource(R.plurals.days, evacDays)),
                         style = MaterialTheme.typography.bodySmall,
-                        color = EvacuationCardContent.copy(alpha = 0.7f),
+                        color = evacuationCardContent.copy(alpha = 0.7f),
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center
                     )
@@ -535,6 +541,7 @@ fun SettingsScreen(
                 TextButton(
                     onClick = {
                         importData?.let { viewModel.importData(it) }
+                        importData = null
                         showImportDialog = false
                     }
                 ) {

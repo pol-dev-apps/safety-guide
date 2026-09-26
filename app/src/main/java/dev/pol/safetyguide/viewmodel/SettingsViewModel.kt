@@ -4,9 +4,6 @@ import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dev.pol.safetyguide.data.model.Category
-import dev.pol.safetyguide.data.model.ChecklistItem
-import dev.pol.safetyguide.data.model.SupplyItem
 import dev.pol.safetyguide.data.repository.BackupRepository
 import dev.pol.safetyguide.data.repository.BackupResult
 import dev.pol.safetyguide.data.repository.ChecklistRepository
@@ -16,14 +13,6 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-// Keep for backward compatibility during migration
-data class BackupData(
-    val categories: List<Category>,
-    val items: List<ChecklistItem>,
-    val supplies: List<SupplyItem>,
-    val exportDate: Long = System.currentTimeMillis()
-)
 
 sealed class OperationResult {
     data object Idle : OperationResult()
