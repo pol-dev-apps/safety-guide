@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Poradnik</string>
+
+    <!-- Navigation -->
+    <string name="nav_checklist">Lista</string>
+    <string name="nav_emergency">Alarmowe</string>
+    <string name="nav_settings">Ustawienia</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Poradnik Bezpieczeństwa</string>
+    <string name="home_subtitle">Twoje przygotowanie ma znaczenie</string>
+    <string name="progress_format">%1$d/%2$d</string>
+    <string name="household_info">Gospodarstwo domowe: %1$d %2$s</string>
+    <string name="preparation_level">Poziom przygotowania</string>
+
+    <!-- Category Screen -->
+    <string name="category_items">Pozycje</string>
+    <string name="category_supplies">Zapasy</string>
+    <string name="add_item">Dodaj pozycję</string>
+    <string name="add_supply">Dodaj zapas</string>
+    <string name="category_progress">Poziom przygotowania</string>
+    <string name="checklist_section">Pozycje na liście</string>
+    <string name="supplies_section">Zapasy</string>
+    <string name="empty_category">Brak pozycji w tej kategorii</string>
+    <string name="back_button">Wróć</string>
+
+    <!-- Item Detail -->
+    <string name="item_title">Tytuł</string>
+    <string name="item_description">Opis</string>
+    <string name="item_description_optional">Opis (opcjonalnie)</string>
+    <string name="item_quantity">Ilość</string>
+    <string name="item_unit">Jednostka</string>
+    <string name="item_expiration">Data ważności</string>
+    <string name="item_expiration_optional">Data ważności (opcjonalnie)</string>
+    <string name="item_notes">Notatki</string>
+    <string name="item_delete">Usuń</string>
+    <string name="item_save">Zapisz</string>
+
+    <!-- Units -->
+    <string name="unit_szt">szt</string>
+    <string name="unit_l">l</string>
+    <string name="unit_kg">kg</string>
+    <string name="unit_opak">opak</string>
+    <string name="unit_par">par</string>
+    <string name="unit_kpl">kpl</string>
+    <string name="unit_label">Jednostka:</string>
+    <string name="minimum_label">Minimum (0 = brak wymaganej ilości)</string>
+    <string name="per_person_multiplier">Mnożnik na osobę (0 = brak skalowania)</string>
+    <string name="per_person_multiplier_description">Jeśli ustawisz 2, zapas będzie automatycznie przeliczany jako 2 × liczba osób</string>
+    <string name="delete_date">Usuń datę</string>
+    <string name="pick_date">Wybierz datę</string>
+    <string name="add_expiration_date">Dodaj datę ważności</string>
+
+    <!-- Emergency Screen -->
+    <string name="emergency_title">Numery Alarmowe</string>
+    <string name="emergency_call">Zadzwoń</string>
+    <string name="emergency_confirm">Czy zadzwonić pod numer %1$s (%2$s)?</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_household_size">Liczba osób w gospodarstwie</string>
+    <string name="settings_export">Eksportuj listę</string>
+    <string name="settings_export_description">Zapisz listę do pliku JSON</string>
+    <string name="settings_import">Importuj listę</string>
+    <string name="settings_import_description">Wczytaj listę z pliku JSON</string>
+    <string name="settings_reset">Resetuj postęp</string>
+    <string name="settings_reset_confirm">Czy na pewno chcesz zresetować cały postęp?</string>
+    <string name="settings_about">O aplikacji</string>
+    <string name="settings_version">Poradnik v1.0.0</string>
+    <string name="settings_household_description">Ilość zapasów jest automatycznie przeliczana na podstawie liczby osób</string>
+    <string name="settings_home_days">Zapasy domowe — dni zapasu</string>
+    <string name="settings_evac_days">Plecak ewakuacyjny — dni zapasu</string>
+    <string name="settings_min_home_days">Minimalna ilość zapasów na %1$d %2$s w domu</string>
+    <string name="settings_min_evac_days">Minimalna ilość zapasów na %1$d %2$s w plecaku</string>
+    <string name="settings_reset_description">Wyczyść zaznaczone pozycje i ilości</string>
+
+    <!-- Day plurals -->
+    <plurals name="days">
+        <item quantity="one">dzień</item>
+        <item quantity="few">dni</item>
+        <item quantity="many">dni</item>
+        <item quantity="other">dni</item>
+    </plurals>
+
+    <!-- Dialogs -->
+    <string name="dialog_cancel">Anuluj</string>
+    <string name="dialog_confirm">Potwierdź</string>
+    <string name="dialog_delete">Usuń</string>
+    <string name="dialog_save">Zapisz</string>
+    <string name="dialog_add">Dodaj</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_close">Zamknij</string>
+    <string name="dialog_reset_title">Resetuj postęp</string>
+    <string name="dialog_reset_text">Czy na pewno chcesz zresetować cały postęp? Tej operacji nie można cofnąć.</string>
+    <string name="dialog_reset_confirm_button">Resetuj</string>
+    <string name="dialog_import_title">Importuj listę</string>
+    <string name="dialog_import_text">Czy na pewno chcesz zaimportować listę? Obecna lista zostanie zastąpiona.</string>
+    <string name="dialog_import_confirm_button">Importuj</string>
+
+    <!-- Alerts -->
+    <string name="alert_export_success">Lista została wyeksportowana</string>
+    <string name="alert_export_error">Błąd podczas eksportu</string>
+    <string name="alert_import_success">Lista została zaimportowana</string>
+    <string name="alert_import_error">Błąd podczas importu</string>
+    <string name="alert_import_read_error">Nie udało się odczytać pliku</string>
+    <string name="alert_reset_success">Postęp został zresetowany</string>
+
+    <!-- Error Messages -->
+    <string name="error_file_open">Nie udało się otworzyć pliku</string>
+    <string name="error_export_failed">Błąd podczas eksportu: %1$s</string>
+    <string name="error_export_unknown">Nieoczekiwany błąd podczas eksportu</string>
+    <string name="error_file_too_large">Plik jest zbyt duży (maksymalnie 1MB)</string>
+    <string name="error_data_exceeds_limits">Dane przekraczają dozwolone limity</string>
+    <string name="error_data_empty">Dane są puste lub nieprawidłowe</string>
+    <string name="error_import_invalid">Błąd podczas importu: Dane są nieprawidłowe</string>
+
+    <!-- Empty States -->
+    <string name="empty_items">Brak pozycji na liście</string>
+    <string name="empty_supplies">Brak zapasów</string>
+
+    <!-- Supply Status -->
+    <string name="supply_minimum">Minimum: %1$d %2$s</string>
+    <string name="supply_below_minimum">Potrzebujesz jeszcze %1$d %2$s</string>
+    <string name="supply_above_minimum">Masz wystarczająco</string>
+    <string name="supply_scaling">Skalowanie: %1$d na osobę</string>
+    <string name="supply_expiration">Ważność: %1$s</string>
+
+    <!-- Accessibility -->
+    <string name="accessibility_category">Kategoria: %1$s</string>
+    <string name="accessibility_progress">Postęp: %1$d z %2$d</string>
+    <string name="accessibility_quantity_increase">Zwiększ ilość</string>
+    <string name="accessibility_quantity_decrease">Zmniejsz ilość</string>
+    <string name="accessibility_increase">Zwiększ</string>
+    <string name="accessibility_decrease">Zmniejsz</string>
+    <string name="accessibility_progress_percent">Postęp: %1$d procent</string>
+
+    <!-- Disclaimer -->
+    <string name="disclaimer_app_name_1">Poradnik</string>
+    <string name="disclaimer_app_name_2">Bezpieczeństwa</string>
+    <string name="disclaimer_legal_heading">Informacja prawna</string>
+    <string name="disclaimer_description">Aplikacja \"Poradnik\" została opracowana na podstawie oficjalnych publikacji rządowych: \"Poradnik Bezpieczeństwa\" (Rząd RP, 2025) oraz \"Instrukcje reagowania - zagrożenie atakiem z powietrza\" (MWSWiA/RCB).</string>
+    <string name="disclaimer_public_domain">Treści urzędowe są w domenie publicznej na podstawie art. 4 ustawy o prawie autorskim i prawach pokrewnych.</string>
+    <string name="disclaimer_not_official">Niniejsza aplikacja NIE JEST oficjalną aplikacją rządową.</string>
+    <string name="disclaimer_informational">Informacje zawarte w aplikacji mają charakter wyłącznie informacyjny. W sytuacji zagrożenia zawsze stosuj się do poleceń służb ratowniczych i komunikatów służb państwowych.</string>
+    <string name="disclaimer_source">Źródła: poradnikbezpieczenstwa.gov.pl, gov.pl/web/rcb</string>
+    <string name="disclaimer_accept">Akceptuję i przechodzę do aplikacji</string>
+    <string name="disclaimer_footer">Możesz zobaczyć tę informację ponownie w sekcji \"O aplikacji\"</string>
+
+    <!-- About Dialog -->
+    <string name="about_license">Licencja: GPLv3</string>
+
+    <!-- Info Card -->
+    <string name="info_description">Aplikacja działa offline — wszystkie dane są przechowywane lokalnie na Twoim urządzeniu. Żadne dane nie są wysyłane ani udostępniane.</string>
+</resources>
