@@ -35,7 +35,7 @@ The app is designed to be a **private, offline tool**. Publishing on Google Play
 
 ## Is It Safe?
 
-- **Open source** — Full source code is available under the MIT License; you can verify what the app does
+- **Open source** — Full source code is available under the GPLv3 License; you can verify what the app does
 - **Signed APK** — The release APK is cryptographically signed; you can verify its authenticity
 - **No network calls** — The app makes zero network requests; it cannot send data anywhere
 - **Local storage only** — All data is stored locally on your device using SQLite (Room) and Android DataStore. Nothing leaves your phone.
@@ -197,7 +197,7 @@ android/
 ├── build.gradle.kts               # Root build file
 ├── settings.gradle.kts            # Module configuration
 ├── ATTRIBUTION.md                 # Content attribution
-├── LICENSE                        # MIT License
+├── LICENSE                        # GPLv3 License
 └── README.md                      # This file
 ```
 
