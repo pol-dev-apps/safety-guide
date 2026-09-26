@@ -44,7 +44,7 @@ The app is designed to be a **private, offline tool**. Publishing on Google Play
 
 ### For Regular Users (APK)
 
-1. Download the `app-release.apk` file to your phone
+1. Download the `SafetyGuide-1.0.0-release.apk` file to your phone
 2. Go to **Settings → Security** (or **Settings → Apps → Special access**)
 3. Enable **Install unknown apps** for your file manager or browser
 4. Open the downloaded `.apk` file and tap **Install**
@@ -76,8 +76,8 @@ The app is designed to be a **private, offline tool**. Publishing on Google Play
 
 #### Install / Uninstall
 
-- **Install debug version:** `adb install app/build/outputs/apk/debug/app-debug.apk`
-- **Install release version:** `adb install app/build/outputs/apk/release/app-release.apk`
+- **Install debug version:** `adb install app/build/outputs/apk/debug/SafetyGuide-1.0.0-debug.apk`
+- **Install release version:** `adb install app/build/outputs/apk/release/SafetyGuide-1.0.0-release.apk`
 - **Uninstall:** `adb uninstall dev.pol.safetyguide`
 
 ## Technical Information
@@ -204,11 +204,21 @@ android/
 ### Building
 
 ```bash
-# Debug build
+# Debug build (no signing required)
 ./gradlew assembleDebug
 
-# Release build (unsigned)
+# Release build (signed APK)
+# First, create a keystore (one-time):
+# keytool -genkey -v -keystore ~/release-key.jks -keyalg RSA -keysize 2048 -validity 10000 -alias safetyguide
+#
+# Then set environment variables:
+# export KEYSTORE_PASSWORD="your-password"
+# export KEY_PASSWORD="your-password"
+
 ./gradlew assembleRelease
+
+# AAB for Google Play Store (not needed for direct install)
+./gradlew bundleRelease
 
 # Run unit tests
 ./gradlew test
@@ -216,6 +226,8 @@ android/
 # Clean
 ./gradlew clean
 ```
+
+**APK location:** `app/build/outputs/apk/release/SafetyGuide-1.0.0-release.apk`
 
 ### Testing
 
